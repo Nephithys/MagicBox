@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MasterBoxesController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -206,10 +207,20 @@
     <Compile Include="Migrations\201602232045475_One.Designer.cs">
       <DependentUpon>201602232045475_One.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602241715509_InitialMigration.cs" />
+    <Compile Include="Migrations\201602241715509_InitialMigration.Designer.cs">
+      <DependentUpon>201602241715509_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602241722113_InitialMigration2.cs" />
+    <Compile Include="Migrations\201602241722113_InitialMigration2.Designer.cs">
+      <DependentUpon>201602241722113_InitialMigration2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MasterBox.cs" />
+    <Compile Include="Models\MasterBoxDBContext.cs" />
     <Compile Include="Models\People.cs" />
     <Compile Include="Models\PeopleDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,9 +238,6 @@
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -281,6 +289,11 @@
     <Content Include="Views\People\Details.cshtml" />
     <Content Include="Views\People\Edit.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
+    <Content Include="Views\MasterBoxes\Create.cshtml" />
+    <Content Include="Views\MasterBoxes\Delete.cshtml" />
+    <Content Include="Views\MasterBoxes\Details.cshtml" />
+    <Content Include="Views\MasterBoxes\Edit.cshtml" />
+    <Content Include="Views\MasterBoxes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -296,6 +309,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201602232045475_One.resx">
       <DependentUpon>201602232045475_One.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602241715509_InitialMigration.resx">
+      <DependentUpon>201602241715509_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602241722113_InitialMigration2.resx">
+      <DependentUpon>201602241722113_InitialMigration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

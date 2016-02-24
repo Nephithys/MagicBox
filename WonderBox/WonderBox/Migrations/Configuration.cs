@@ -5,14 +5,14 @@ namespace WonderBox.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WonderBox.Models.PeopleDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<WonderBox.Models.MasterBoxDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(WonderBox.Models.PeopleDBContext context)
+        protected override void Seed(WonderBox.Models.MasterBoxDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 
