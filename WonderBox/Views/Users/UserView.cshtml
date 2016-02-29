@@ -1,0 +1,38 @@
+﻿@*@model WonderBox.Models.Users*@
+@model IEnumerable<WonderBox.Models.Users>
+@{
+    ViewBag.Title = "UserView";
+}
+
+<h2>UserView</h2>
+
+@*<div>
+        @Html.DisplayNameFor(model => model.Name);
+    </div>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountOwed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlySubscription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearlySubscription)
+        </th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountOwed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthlySubscription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearlySubscription)
+        </td>
+    </tr>
+}
+</table>
