@@ -13,6 +13,7 @@
     var totalSubscribers = Model.Sum(d => d.MonthlySubscription + d.YearlySubscription);
     decimal totalMonthlyRevenue = Math.Round(Model.Sum(e => e.TotalMonthlyRevenuIncoming ), 2);
     var totalReg = Model.Sum(f => f.TotalRegistered);
+    var AverageAge = Model.Average(g => g.Age);
 }
 
 <table class="table">
@@ -97,6 +98,9 @@
             Total Registered Users
         </th>
         <th>
+            Average Age
+        </th>
+        <th>
             Total Subscriptions
         </th>
         <th>
@@ -121,6 +125,9 @@
     <tr>
         <td>
             @totalReg
+        </td>
+        <td>
+            @AverageAge
         </td>
         <td>
             @totalSubscribers

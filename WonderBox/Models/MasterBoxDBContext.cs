@@ -19,5 +19,7 @@ namespace WonderBox.Models
 
         public DbSet<Users> Users { get; set; }
         public DbSet<Subscription> Subcriptions { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Survey> Surveys { get; set; }
     }
 }

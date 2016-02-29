@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WonderBox.Models.Survey>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Take Survey", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quetion1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quetion2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quetion3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quetion4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quetion5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quetion6)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quetion1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quetion2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quetion3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quetion4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quetion5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quetion6)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
