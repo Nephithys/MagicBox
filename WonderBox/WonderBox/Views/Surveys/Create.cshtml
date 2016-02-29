@@ -1,0 +1,131 @@
+﻿@model WonderBox.Models.Survey
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Survey</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <h3>1. Can you even?</h3>
+            <div class="col-md-10">
+                @{var listItems1 = new List<SelectListItem>
+                               ()
+               {
+               new SelectListItem {Text = "Yes",   Value = "10000"},
+               new SelectListItem {Text = "No", Value = "20000"}
+               };
+
+                    @Html.DropDownListFor(m => m.Question1, listItems1)
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>2. Do you prefer horror-scifi of drama?</h3>
+            <div class="col-md-10">
+                @{var listItems2 = new List<SelectListItem>
+                               ()
+               {
+               new SelectListItem {Text = "Horror-SciFi",   Value = "5000"},
+               new SelectListItem {Text = "Drama", Value = "4000"}
+               };
+
+                    @Html.DropDownListFor(m => m.Question2, listItems2)
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>3. Which music genre do you prefer</h3>
+            <div class="col-md-10">
+                @{var listItems3 = new List<SelectListItem>
+                                                   ()
+               {
+               new SelectListItem {Text = "Electronic",   Value = "900"},
+               new SelectListItem {Text = "Metal and/or Rock", Value = "700"},
+                    new SelectListItem {Text = "Orchestral",   Value = "500"},
+               new SelectListItem {Text = "Jazz", Value = "300"}
+               };
+
+                    @Html.DropDownListFor(m => m.Question3, listItems3)
+                }
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>4. Do you prefer Playstaion, Xbox, or PC</h3>
+            <div class="col-md-10">
+                @{var listItems4 = new List<SelectListItem>
+                               ()
+               {
+               new SelectListItem {Text = "Playsation",   Value = "80"},
+               new SelectListItem {Text = "Xbox", Value = "60"},
+               new SelectListItem {Text = "PC", Value = "40"}
+               };
+
+                    @Html.DropDownListFor(m => m.Question4, listItems4)
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>5. Heroes or Villains?</h3>
+            <div class="col-md-10">
+                @{var listItems5 = new List<SelectListItem>
+                               ()
+               {
+               new SelectListItem {Text = "Heroes",   Value = "6"},
+               new SelectListItem {Text = "Villains", Value = "5"},
+               };
+
+                    @Html.DropDownListFor(m => m.Question5, listItems5)
+                }
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h3>6. How bad of a day is it?</h3>
+            <div class="col-md-10">
+                @{var listItems6 = new List<SelectListItem>
+                               ()
+               {
+               new SelectListItem {Text = "Fireball",   Value = "300000"},
+               new SelectListItem {Text = "Grey Goose", Value = "400000"},
+               new SelectListItem {Text = "Everclear", Value = "500000"},
+               };
+
+                    @Html.DropDownListFor(m => m.Question6, listItems6)
+                }
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+                //onclick="window.location.href='@Url.Action("ProfileView")'" 
+            </div>
+        </div>
+    </div>
+                    }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+            }
